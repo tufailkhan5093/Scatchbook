@@ -1,0 +1,30 @@
+{% extends 'visit/template.html' %}
+{% block content %}
+    <div class="container">
+        <br><br>
+        <div class="row">
+            <div class="col">
+                
+            </div>
+            <div class="  col">
+                <div class="row">
+                    <h4 class="ms-5 pull-left bg-gray">Welcome to the Memory Book Signing Page for</h4>
+                <br>
+                </div>
+                <div class="row">
+                    <h1 class="ms-5 pull-left" style="font-size: 6vw;"> {NAME}</h1>
+                </div>
+                <br><br>     
+                <h4 class="text-left">This is {name}'s {occasion} Memory Book. It would been a lot for them if you could contribute to the book and add messages to make them smile! Prompts have been created by the creator so you can easily and quickly add a message accordingly!</h4>
+                <br>
+                <a href="{% url 'add' %}" class="btn btn-info pull-left btn-lg p-3">Add Your Message</a>
+                <br><br>
+                <h4 class="text-left">Pause Before You Post!</h4>
+                <h4 class="text-left" style="color: gray;">Remember Memory Books are for positive vibes only! Messages are moderated and removed as needed.</h4>
+                
+                  <br><br><br>
+                  <a class="text-left btn text-info" href="{% url 'one' %}">Click Here to Create your Own Memory Book!!</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

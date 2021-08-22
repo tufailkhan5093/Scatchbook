@@ -1,0 +1,204 @@
+{% extends 'create/template.html' %} {% block content %}
+
+<style>
+
+button:hover{
+  background-color: orange;
+}
+
+</style>
+
+</style>
+<div class="container">
+  <div class="tab-content" id="myTabContent">
+    <div
+      class="tab-pane fade show active"
+      id="step1"
+      role="tabpanel"
+      aria-labelledby="step1-tab"
+    >
+      <br /><br />
+      <h1 class="text-info">Step 1</h1>
+      <br /><br />
+      <h2 class="ms-5">What's the Occasion?</h2>
+      <br /><br />
+      <div class="row p-10">
+        <div class="col"  onclick="changebackground()">
+          <span class="shadow" id="col">
+            <button class="btn btn-lg button" id="col" style="background-color: transparent">
+              <div style="text-align: center;width: 200px;"><i class="fas fa-birthday-cake fa-3x mb-2"></i></div>
+              <form id="col" method="POST" action="">
+                {% csrf_token %}
+                  <input hidden type="text" value="HappyBirthday" name='hb'>
+                  
+                  <a href="" role="button">
+                <input onclick="changebackground()" id="col"  type="submit" value="Happy BirthDay" style="border: none;">
+                  </a>
+                </form>
+            </form>
+            </button>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fas fa-newspaper fa-3x mb-2"></i></i></div>
+              <form method="POST" action="{% url 'two' %}">
+                {% csrf_token %}
+                  <input hidden type="text" value="New Year" name='hb'>
+                <input type="submit" value="New Year" style="border: none;">
+                </form>
+            </form>
+            </button>
+          </span>
+        </div>
+       
+
+
+        <div class="col">
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fas fa-smile-wink fa-3x mb-2"></i></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Congratulations" name='hb'>
+                <input type="submit" value="Congratulations" style="border: none;">
+                </form>
+            </button>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fas fa-thumbs-up fa-3x mb-2"></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Farewell" name='hb'>
+                <input type="submit" value="Farewell" style="border: none;">
+                </form>
+            </button>
+          </span>
+        </div>
+
+
+        <div class="col">
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fas fa-walking fa-3x mb-2"></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Retirement" name='hb'>
+                <input type="submit" value="Retirement" style="border: none;">
+                </form>
+            </button>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fab fa-get-pocket fa-3x mb-2"></i></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Get Well Soon" name='hb'>
+                <input type="submit" value="Get Well Soon" style="border: none;">
+                </form>
+            </button>
+          </span>
+        </div>
+
+
+
+      <div class="col">
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fas fa-check-double fa-3x mb-2"></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Thank You" name='hb'>
+                <input type="submit" value="Thank You" style="border: none;">
+                </form>
+            </button>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span class="shadow">
+            <button class="btn btn-lg" style="background-color: transparent">
+              <div style="text-align: center"><i class="fab fa-intercom fa-3x mb-2"></i></div>
+              <form method="POST">
+                {% csrf_token %}
+                  <input hidden type="text" value="Custom" name='hb'>
+                <input type="submit" value="Custom" style="border: none;">
+                </form>
+            </button>
+          </span>
+        </div>
+
+
+      </div>
+      <br /><br />
+      <h4>What's the special occasion?</h4>
+
+      <form id="form" action="{% url 'steps_save' %}" method="POST">
+        {% csrf_token %}
+
+        
+        <input
+          type="text"
+          name="occasion"
+          class="form-control shadow"
+          placeholder="Enter Here"
+          aria-label="Custom"
+          aria-describedby="basic-addon1"
+        />
+      
+      </form>
+      <br /><br /><br /><br />
+      <div class="fixed-bottom">
+        <div class="row bg-light p-4 justify-content-center">
+          <div class="col">
+            <a
+              type="button "
+              href="#"
+          
+              class="btn btn-info m-2 btn-lg"
+              >Nevermind</a
+            >
+          </div>
+          <div class="col">
+            <a
+              type="button "
+              href="{% url 'two' %}"
+          
+              class="btn btn-info m-2 btn-lg"
+              >Next</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="step2"
+      role="tabpanel"
+      aria-labelledby="step2-tab"
+    >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function changebackground(){
+    $("col").click(function(){
+      document.getElementById('col').style.backgroundColor = 'green' ;
+    });
+	//document.getElementById('col').style.backgroundColor = 'green' ; 
+}
+
+$(document).ready(function(){
+    $('#third').hide();
+  
+    
+
+
+  });
+</script>
+{% endblock content %}

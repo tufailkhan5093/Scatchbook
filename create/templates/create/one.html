@@ -1,0 +1,61 @@
+{% extends 'create/template.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <img class="img-fluid p-10 m-10" src="/media/create/step1.png" alt="step1">
+    <br><br>
+    <h1 class="ms-5" style="font-size: 5rem;">What's the Occasion?</h1>
+    <br><br>
+    <div class="row p-10">
+        <div class="col">
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+        </div>
+        <div class="col">
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+        </div>
+        <div class="col">
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+          <!-- I don't get how to add text and icon on top of this square-->
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+        </div>
+        <div class="col">
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+          <span style="font-size: 15rem; color: whitesmoke;">
+            <i class="fas fa-square"></i>
+          </span>
+        </div>
+    </div>
+    <br><br>
+    <h4>What's the special occasion?</h4>
+    <input type="text" class="form-control" placeholder="Enter Here" aria-label="Custom" aria-describedby="basic-addon1">
+    <br><br><br><br>
+    <div class="fixed-bottom">
+      <div class="row bg-light p-4 justify-content-center">
+        <div class="col">
+          <a type="button " href="{% url 'one' %}" class="btn btn-info m-2 btn-lg">Nevermind</a>
+        </div>
+        <div class="col">
+          <a type="button " href="{% url 'two' %}" class="btn btn-info m-2 btn-lg">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

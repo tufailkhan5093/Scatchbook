@@ -1,0 +1,197 @@
+{% extends 'create/template.html' %} {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="col-md-8 container" style="margin-top: 100px;">
+  <h1>Design Cover and Select Page Themes/Promts!</h1>
+  <p style="font-size: 20px;">
+    Select themes and prompts for each section of your memory book so your
+    family and friends that you send this to will have specific topics to write
+    about. We have some premade options for you, but feel free to come up with
+    your own and make it personalized for {name}. Make this memory book special for them!
+  </p>
+
+  
+<button id="show" class="btn btn-info mt-5" style="border-radius: 50px;">Add a Section  <i class="fas fa-plus-circle fa-lg"></i></button>
+<button id="prompt1" class="btn btn-info mt-5" style="border-radius: 50px;">Prompt1<i class="fas fa-plus-circle fa-lg"></i></button>
+<button id="prompt2" class="btn btn-info mt-5" style="border-radius: 50px;">Prompt2<i class="fas fa-plus-circle fa-lg"></i></button>  
+<div class="col-sm-6 shadow px-3 container mt-5">
+    
+  <form action="" class="form-group mx-auto" id="form" method="POST" style="margin-bottom: 100px;">
+    {% csrf_token %}
+    <h3 class="my-4">Memory Book</h3>
+   
+    <input name="first" id="first" type="text" class="form-control mb-5" placeholder="What is your words about {{step2.firstname}}">
+    
+   
+    <input id='second' name="second" type="text" class="form-control mb-5" placeholder="What is your favorite thing about {{step2.firstname}}">
+    
+
+    <input name="third" id='third' type="text" class="form-control mb-5" placeholder="What is your favorite thing about {{step2.firstname}}"> -->
+
+    <input class="btn btn-success" type="submit" value="Submit">
+
+  </form>
+  <!-- <button id="show1" class="btn btn-info mt-5" style="border-radius: 50px;">Add a Section  <i class="fas fa-plus-circle fa-lg"></i></button>
+  <form class="form-group mx-auto" id="form1" method="POST" style="margin-bottom: 100px;">
+    {% csrf_token %}
+    <h3 class="my-4">Memory Book</h3>
+    <label>What is your favorite thing about {{step2.firstname}}</label>
+    <input name="first" type="text" class="form-control mb-5" placeholder="Write here...">
+    
+  
+    <label id='label'>What is your favorite thing about {{step2.firstname}}</label>
+    <input name="second" type="text" class="form-control mb-5" placeholder="Write here...">
+  
+    <label>What is your favorite thing about {{step2.firstname}}</label>
+    <input name="third" type="text" class="form-control mb-5" placeholder="Write here...">
+
+    <input class="btn btn-success" type="submit" value="Submit" style="border-radius: 50px;">
+
+  </form> -->
+  
+</div>
+
+<div class="fixed-bottom">
+  <div class="row bg-light p-4 justify-content-center">
+    <div class="col">
+      <a
+        type="button "
+        href="{% url 'two' %}"
+    
+        class="btn btn-info m-2 btn-lg"
+        >Back</a
+      >
+    </div>
+    <div class="col">
+      <a
+        type="button "
+        href="{% url 'final' %}"
+    
+        class="btn btn-info m-2 btn-lg"
+        >Done</a
+      >
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#form').hide()
+    
+    // $("#hide").click(function(){
+    //   $("#first").hide();
+    // });
+    $("#show").click(function(){
+      $("#form").show();
+    });
+  });
+
+
+ 
+
+  $(document).ready(function(){
+    $('#second').hide();
+    
+    // $("#hide").click(function(){
+    //   $("#first").hide();
+    // });
+    $("#prompt1").click(function(){
+      $("#second").show();
+    });
+  });
+
+  $(document).ready(function(){
+    $('#third').hide();
+    
+    // $("#hide").click(function(){
+    //   $("#first").hide();
+    // });
+    $("#prompt2").click(function(){
+      $("#third").show();
+    });
+
+
+  });
+  </script>
+
+<!-- <div class="container">
+        <br>
+        <img class="img-fluid p-1 m-1" src="/media/create/step3.png" alt="step3">
+        <br><br>
+        <h1 class="ms-5" style="font-size:4vw;" >Design Cover and Select Page Themes/Promts!</h1>
+        <br>
+        <h1 style="font-size:2.5vw;">Select themes and prompts for each section of your memory book so your family and friends that you send this to will have specific topics to write about. We have some premade options for you, but feel free to come up with your own and make it personalized for {name}. Make this memory book special for them!</h1>
+        <br><br>
+        <h1><div class="ms-5" style="font-size:4vw;"></div>Add a Section  <i class="fas fa-plus-circle fa-lg"></i></h1>
+        <p>If you click on the "Hide" button, I will disappear.</p>
+
+
+
+<form class="shadow form-control">
+
+
+  <input type="text" name="first" id="first" placeholder="What is your favorite thing about {name}?">
+ 
+  <input type="text" name="second" id="second" placeholder="What is your favorite memory with {name}?">
+  
+
+  <input type="submit" value="Submit">
+
+
+</form>
+<button id="show">Add a Question ?</button>
+<button id="show2">Add a Question ?</button> 
+        
+        
+        
+        <br>
+          <button class="btn btn-primary pull-left" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Prompt Ideas
+          </button>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body ">
+              <ol class="pull-left">
+                <li>What is your favorite thing about {name}?</li>
+                <li>What is your favorite memory with {name}?</li>
+                <li>What's your favoring thing to do with {name}?</li>
+              </ol>
+            </div>
+          </div>
+        <br>
+        <br>
+        <h1 class="pull-left" style="font-size:2vw;">Enter a prompt:</h1>
+        <input class="form-control" type="text" placeholder="Ex: What's your favoite thing about {name}?">
+        <br><br><br><br>
+        <div class="fixed-bottom">
+        <div class="row bg-light p-4 justify-content-center">
+            <div class="col">
+            <a type="button " href="{% url 'two' %}" class="btn btn-info m-2 btn-lg">Back</a>
+            </div>
+            <div class="col">
+            <a type="button " href="{% url 'final' %}" class="btn btn-info m-2 btn-lg">Done!</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <script>
+      $(document).ready(function(){
+        $('#first').hide();
+        $('#second').hide();
+        // $("#hide").click(function(){
+        //   $("#first").hide();
+        // });
+        $("#show").click(function(){
+          $("#first").show();
+        });
+
+        $("#show2").click(function(){
+          $("#second").show();
+        });
+      });
+      </script> -->
+{% endblock content %}

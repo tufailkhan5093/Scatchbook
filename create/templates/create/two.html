@@ -1,0 +1,54 @@
+{% extends 'create/template.html' %} {% block content %}
+
+
+<div class="container">
+  <div class="row my-3">
+   <div class="col-sm-6 offset-sm-3">
+    <h3>For who is this for</h3>
+    <hr>
+    <form action="" method="post" novalidate class="shadow p-5" enctype="multipart/form-data">
+      {% csrf_token %}
+
+     <input type="text" class="form-control" placeholder="First Name" name='firstname'>
+      <br>
+     <input type="text" class="form-control" placeholder="Last Name" name='lastname'>
+     <br>
+     <lable>Insert Cover Pic :</lable>
+     <input type="file" class="form-control" name="coverpic">
+     <br>
+     <label>Set Deadline for submissions</label>
+     <input type="datetime-local" name="date" placeholder="Set Date">
+     <br><br>
+     <input type="submit" class="btn btn-success" value="Submit">
+     
+    </form>
+   </div>
+  </div>
+
+  <div class="fixed-bottom">
+    <div class="row bg-light p-4 justify-content-center">
+      <div class="col">
+        <a
+          type="button "
+          href="{% url 'steps' %}"
+      
+          class="btn btn-info m-2 btn-lg"
+          >Back</a
+        >
+      </div>
+      <div class="col">
+        <a
+          type="button "
+          href="{% url 'three' %}"
+      
+          class="btn btn-info m-2 btn-lg"
+          >Next</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,164 @@
+{% extends 'create/template.html' %} {% block content %}
+<div class="container">
+
+  <br /><br />
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="" style="height: 80%">
+        <br /><br />
+        <h1>{{occasion.event}} {{step2.firstname}}</h1>
+        <div>
+          <img src="{{step2.cover_pic.url}}" alt="coverpic" width="400" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div>
+        <br /><br />
+        <h1>SUCCESS! TIME TO SHARE</h1>
+
+        <p style="font-size: 20px">
+          Copy the link below and share it with trusted friends and family for
+          them to add messages to your pages.
+        </p>
+        <br>
+        <p>Shareable Link<b>(Do not Share Publicaly)</b></p>
+        <input type="text" id="myInput" value="{{s_link}}{{occasion.event}}/{{occasion.id}}"  style="width: 350px;"><button id="button" onclick="Hello()" class="btn btn-success btn-sm">Copy</button>
+        <br><br>
+        <b>To prevent any unwanted comments, only share to those whom you
+          trust!</b>
+          <br><br><br>
+          <b style="margin-right: 60px;">Notification Preference ! </b>
+          <br>
+
+          <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+          checked
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          I want a notification email each time someone added a message
+        </label>
+        <br>
+        <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="exampleRadios1"
+        value="option1"
+        checked
+      />
+      <label class="form-check-label" for="exampleRadios1">
+        I want a notification email each time someone added a message
+      </label>
+      </div>
+
+    </div>
+
+    <div class="fixed-bottom">
+      <div class="row bg-light p-4 justify-content-center">
+        <div class="col">
+          <a
+            type="button "
+            href="{% url 'two' %}"
+        
+            class="btn btn-info m-2 btn-lg"
+            >Back</a
+          >
+        </div>
+        <div class="col">
+          <a
+            type="button "
+            href="{% url 'afterfinal' %}"
+        
+            class="btn btn-info m-2 btn-lg"
+            >Next</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col">
+      <h1 class="ms-5" style="font-size: 4vw">SUCCESS! TIME TO SHARE</h1>
+      <br />
+      <h1 style="font-size: 2.5vw">
+        Copy the link below and share it with trusted friends and family for
+        them to add messages to your pages.
+      </h1>
+      <br />
+      <h5>Shareable Link <b>(DO NOT share publicly)</b></h5>
+      <div class="input-group mb-3">
+        <button
+          type="text"
+          class="form-control"
+          placeholder="link here"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        >
+          https://linktothesigningpage
+        </button>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">COPY</button>
+        </div>
+      </div>
+      <h5>
+        <b
+          >To prevent any unwanted comments, only share to those whom you
+          trust!</b
+        >
+      </h5>
+      <br />
+      <h5 class="pull-left">Notification Prefrences</h5>
+      <div class="form-check pull-left">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+          checked
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          I want a notification email each time someone added a message
+        </label>
+      </div>
+      <div class="form-check pull-left">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios2"
+          value="option2"
+        />
+        <label class="form-check-label" for="exampleRadios2">
+          I only want a notification email when the memory book's deadline is
+          today and it's finished
+        </label>
+      </div>
+      <br /><br /><br />
+      <a href="{% url 'one' %}">Click Here to Create your Own Memory Book!!</a>
+    </div> -->
+  </div>
+</div>
+
+<script>
+  function Hello() {
+  var copyText = document.getElementById('myInput')
+  copyText.select();
+  document.execCommand('copy')
+  console.log('Copied Text')
+
+  var bt=document.getElementById('button')
+  bt.innerHTML='copied'
+}
+
+
+</script>
+
+
+
+{% endblock content %}
